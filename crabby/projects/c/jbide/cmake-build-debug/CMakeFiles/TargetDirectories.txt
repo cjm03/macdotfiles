@@ -1,0 +1,3 @@
+/home/crab/crabby/projects/c/jbide/cmake-build-debug/CMakeFiles/jbide.dir
+/home/crab/crabby/projects/c/jbide/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/crab/crabby/projects/c/jbide/cmake-build-debug/CMakeFiles/rebuild_cache.dir

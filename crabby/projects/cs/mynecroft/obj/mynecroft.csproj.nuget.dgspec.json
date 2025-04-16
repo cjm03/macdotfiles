@@ -1,0 +1,87 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/crab/crabby/projects/cs/mynecroft/mynecroft.csproj": {}
+  },
+  "projects": {
+    "/home/crab/crabby/projects/cs/mynecroft/mynecroft.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/crab/crabby/projects/cs/mynecroft/mynecroft.csproj",
+        "projectName": "mynecroft",
+        "projectPath": "/home/crab/crabby/projects/cs/mynecroft/mynecroft.csproj",
+        "packagesPath": "/home/crab/.nuget/packages/",
+        "outputPath": "/home/crab/crabby/projects/cs/mynecroft/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/crab/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "OpenTK": {
+              "target": "Package",
+              "version": "[4.9.3, )"
+            },
+            "SimplexNoise": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "StbImageSharp": {
+              "target": "Package",
+              "version": "[2.30.15, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.3, 9.0.3]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.104/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

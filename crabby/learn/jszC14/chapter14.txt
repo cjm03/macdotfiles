@@ -1,0 +1,125 @@
+################
+#              #
+#  Chapter 14  #
+#              #
+################
+
+Understanding Array Names and Pointers (p284)
+    
+    As we've seen, elements of arrays can always be accessed via indices and traversed by means of an
+    integer offset from the zeroth element. Sometimes, however, its more convenient to access array 
+    elements via a pointer equivalent.
+    Consider declaring this array and two pointers:
+
+        const int arraySize = 5;
+        int       array[5]  = {1, 2, 3, 4, 5};
+        int*      pArray1   = NULL;
+        int*      pArray2   = NULL;
+
+    We have declared a contiguous block of `arraySize`, or `5`, which are elements that are integers.
+    We don't use `arraySize` in the array declaration because the array cannot be initialized as `array`
+    in this way, even though `arraySize` is a constant. We also declared two pointers to integers-`pArray1`
+    and `pArray2`. The way this would look in memory will vary from system to system.
+
+    Remember we can't control the ordering or location of variables, but we do know that arrays are 
+    guaranteed to be contiguous blocks of values beginning at the array's name.
+
+    The name of the array represents the location or address of its zeroth element. Because the array
+    name alone is treated as a pointer, we can do the following:
+
+        pArray1 = array;
+
+    The value of `pArray1` is now the address of the zeroth element of `array[]`. We can also be more
+    explicit when we assign the address of the zeroth element, as follows:
+
+        pArray2 = &array[0];
+
+    Here, the target of `pArray2` is the zeroth element of `array[]`. To be even more explicit, we
+    could have written this with parentheses, as follows:
+
+        pArray2 = &(array[0]);
+
+    Each of these assignments is functionally identical.
+
+    Because of precedence rules, parentheses are not needed; the operator precedence of `[ ]` is higher
+    than `&` and is therefore evaluated first. `array[0]` evaluates to the specific array element with
+    an offset of 0. Notice how `array` is treated as a pointer, even though it is a named location, but
+    the `array[0]` array element is treated as a named location or a variable that happens to be part of
+    an array. Whenever `[ n ]` is given with the array name, it is best to think of a specific element
+    within an array.
+
+    Now, `array`, `&array[0]`, `pArray1`, and `pArray2` all point to exactly the same location. 
+
+Understanding Array Elements and Pointers (p287)
+
+    Individual elements of an array can be accessed either with array notation or via pointers.
+    We have already seen how to access the elements of array using array notation `[` and `]`:
+
+        array[0] = 1;       // first element (zeroth offset)
+        array[1] = 2;
+        array[2] = 3;
+        array[3] = 4;
+        array[4] = 5;       // fifth element (fourth offset)
+
+    These statements assign the 1 .. 5 values to each element of our array, just as the single 
+    initialization statement did when we declared `array[5]`.
+
+Accessing Array Elements via Pointers
+
+    Arithmetic can be performed with addresses. Therefore, we can access the elements of `array` using
+    a pointer plus an offset, as follows:
+
+        *(pArray1 + 0) = 1; // first element (zeroth offset)
+        *(pArray1 + 1) = 2; // second element (first offset)
+        *(pArray1 + 2) = 3; // third element (second offset)
+        *(pArray1 + 3) = 4; // fourth element (third offset)
+        *(pArray1 + 4) = 5; // fifth element (fourth offset)
+
+    Since `pArray` is a pointer, the * go-to address of notation must be used to access the value
+    at the address of that pointer. In the second through fifth elements, we must first add an offset
+    value and then go to that computed address. Note that we must use `(` and `)` to properly calculate
+    the address before assigning the value there. Also, note that `*(pArray1 + 0)` is identical to
+    the abbreviated version, `*pArray1`.
+
+    You may have already noticed how adding an offset to a base address (pointer) is very similar to 
+    using an array name and an index. Now, we can see how array element referencing and pointer
+    element referencing are equivalent, as follows:
+
+        array[0]            *(pArray1 + 0)
+        array[1]            *(pArray1 + 1)
+        array[2]            *(pArray1 + 2)
+        array[3]            *(pArray1 + 3)
+        array[4]            *(pArray1 + 4)
+
+    Notice `array` is an unchanging address and `pArray` is also an unchanging address. The address
+    of `array` is fixed and cannot be changed. However, the value of `pArray` can be changed--it is
+    a variable, after all--in this example, the value of `pArray` is not changed. The address of
+    each element is evaluated as an intermediate value--the unchanged value of `pArray` plus an offset.
+
+Operations on Arrays Using Pointers
+
+    Before this chapter, the only pointer operation we had used with arrays was assignment. Because
+    we can perform simple arithmetic on pointers--addition and subtraction--these operations
+    conveniently lend themselves to array traversal.
+
+Using Pointer Arithmetic (p288)
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

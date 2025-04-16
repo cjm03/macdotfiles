@@ -1,0 +1,6 @@
+POST foo.txt HTTP/1.1
+Host: foo.domain.me
+Content-Length: 10
+Content-Type: application/text
+
+color=blue

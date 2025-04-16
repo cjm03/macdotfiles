@@ -1,0 +1,76 @@
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-10 00:42 EDT
+Nmap scan report for 10.0.0.1
+Host is up (0.0057s latency).
+Not shown: 991 closed tcp ports (conn-refused)
+PORT     STATE    SERVICE
+22/tcp   filtered ssh
+23/tcp   filtered telnet
+53/tcp   open     domain
+80/tcp   open     http
+111/tcp  filtered rpcbind
+443/tcp  open     https
+8080/tcp filtered http-proxy
+8181/tcp filtered intermapper
+9000/tcp filtered cslistener
+
+Nmap scan report for 10.0.0.15
+Host is up (0.000012s latency).
+All 1000 scanned ports on 10.0.0.15 are in ignored states.
+Not shown: 1000 closed tcp ports (conn-refused)
+
+Nmap scan report for 10.0.0.36
+Host is up (0.00064s latency).
+Not shown: 999 filtered tcp ports (no-response)
+PORT   STATE  SERVICE
+80/tcp closed http
+
+Nmap scan report for 10.0.0.78
+Host is up (0.024s latency).
+Not shown: 999 closed tcp ports (conn-refused)
+PORT      STATE SERVICE
+62078/tcp open  iphone-sync
+
+Nmap scan report for 10.0.0.85
+Host is up (0.0094s latency).
+Not shown: 997 closed tcp ports (conn-refused)
+PORT      STATE SERVICE
+443/tcp   open  https
+7000/tcp  open  afs3-fileserver
+49152/tcp open  unknown
+
+Nmap scan report for 10.0.0.104
+Host is up (0.0088s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT      STATE SERVICE
+49152/tcp open  unknown
+62078/tcp open  iphone-sync
+
+Nmap scan report for 10.0.0.221
+Host is up (0.0046s latency).
+Not shown: 990 closed tcp ports (conn-refused)
+PORT     STATE    SERVICE
+22/tcp   filtered ssh
+23/tcp   filtered telnet
+80/tcp   filtered http
+110/tcp  filtered pop3
+111/tcp  filtered rpcbind
+113/tcp  filtered ident
+139/tcp  filtered netbios-ssn
+3306/tcp filtered mysql
+5900/tcp filtered vnc
+8080/tcp filtered http-proxy
+
+Nmap scan report for 10.0.0.236
+Host is up (0.0055s latency).
+Not shown: 999 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+7000/tcp open  afs3-fileserver
+
+Nmap scan report for 10.0.0.244
+Host is up (0.010s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT      STATE SERVICE
+49152/tcp open  unknown
+62078/tcp open  iphone-sync
+
+Nmap done: 256 IP addresses (9 hosts up) scanned in 7.91 seconds

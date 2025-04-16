@@ -1,0 +1,43 @@
+// projects/c/icex06.c
+/*
+ * Charles Moye
+ */
+#include <stdio.h>
+#include <ctype.h>
+
+#define ALPHAS 0
+#define DIGITS 1
+#define PUNCTS 2
+#define WHITESPACES 3
+#define UPPERCASES 4
+
+int getchars(void) {
+    int character_count[5] = {0};
+    int total_characters = 0;
+    int i;
+    while ((i = getchar()) != EOF) {
+        total_characters++;
+        if (isalpha(i)) {
+            character_count[ALPHAS]++;
+            if (isupper(i)) {
+                character_count[UPPERCASES]++;
+            }
+        } else if (isdigit(i)) {
+            character_count[DIGITS]++;
+        } else if (ispunct(i)) {
+            character_count[PUNCTS]++;
+        } else if (isspace(i)) {
+            character_count[WHITESPACES]++;
+        }
+    }
+    fprintf(stderr, "\nResults:\n");
+    fprintf(stderr, "%-12s %-12s %-12s %-12s %-12s %-12s\n", "ALPHAS", "DIGITS", "PUNCTS", "WHITESPACES", "UPPERCASES", "TOTALCHARS");
+    fprintf(stderr, "%-12d %-12d %-12d %-12d %-12d %-12d\n", character_count[ALPHAS], character_count[DIGITS], character_count[PUNCTS], character_count[WHITESPACES], character_count[UPPERCASES], total_characters);
+
+    return total_characters;
+}
+
+int main(void) {
+    getchars();
+    return 0;
+}

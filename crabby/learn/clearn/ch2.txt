@@ -1,0 +1,75 @@
+Chapter 2 - Types, Operators, and Expressions
+    ANSI standard has made many small changes and additions to basic types and expressions.
+
+2.1 Variable Names
+    Names are made up of letters and digits; the first character must be a letter.
+    Traditional C practice is to use lower case for variable names, and all upper case for symbolic constants.
+
+2.2 Data Types and Sizes
+    Basic data types in C:
+        char    a single byte, capable of holding one character in the local character set
+        int     an integer, typically reflecting the natural size of integers on the host machine
+        float   single-precision floating point
+        double  double-precision floating point
+    In addition, there are qualifiers that can be applied to these basic types. short and long apply to integers
+        short int sh;
+        long int counter;
+        *The word 'int' can be omitted in such declarations, and typically it is.*
+        *'short' is no longer than 'int', which is no longer than 'long'*
+    The qualifier 'signed' or 'unsigned' may be applied to char or any integer.
+        If, for example, 'char' types are 8 bits:
+            unsigned char : values between 0 and 255
+            signed char   : values between -128 and 127
+    The type 'long double' specifies extended-precision floating point. As with integers, the sizes of floating
+    -point objects are implementation-defined; 'float', 'double', and 'long double' could be 1, 2, or 3 distinct sizes.
+
+2.3 Constants
+    An 'enumeration constant' is a list of constant integer values:
+        enum boolean { NO, YES };
+    The first name in an enum has value 0, the next 1, and so on, unless explicit values are specified
+
+2.4 Declarations
+    All variables must be declared before use, although certain declarations can be made implicitly
+    by content. A declaration specifies a type and contains a list of one or more variables of that type:
+        int lower, upper, step;
+        char c, line[1000];
+    The qualifier 'const' can be applied to the declaration of any variable to specify that its value
+    will not be changed. For an array, the 'const' qualifier says that the elements will not be altered.
+    The 'const' declaration can also be used with array args to indicate the function won't change the array.
+
+2.8 Increment and Decrement Operators
+    The increment operator '++' adds 1 to its operand, while the decrement operator '--' subtracts 1.
+    They may be used either as prefix operators or postfix operators, with slight differences.
+    '++n' increments n BEFORE the value is used, while 'n++' increments n AFTER its value is used.
+    Example: if 'n' is 5, then:
+        x = n++;    sets x to 5
+        x = ++n;    sets x to 6
+        * in both cases, n becomes 6, but x will differ *
+
+2.9 Bitwise Operators
+    C provides 6 operators for bit manipulation; these may only be applied to integral operands, that 
+    is, 'char', 'short', 'int', and 'long', whether signed or unsigned.
+        &       bitwise AND
+        |       bitwise inclusive OR
+        ^       bitwise exclusive OR (XOR)
+        <<      left shift
+        >>      right shift
+        ~       one's complement (unary)
+    The bitwise AND operator '&' is often used to mask off some set of bits, for example
+        n = n & 0177;   sets to zero all but the low-order 7 bits of n.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,288 @@
+Passing buffer to function for writing: https://stackoverflow.com/questions/73342290/passing-buffer-to-function-for-writing
+C/Pointers YALE: https://www.cs.yale.edu/homes/aspnes/pinewiki/C(2f)Pointers.html
+C Standard Library TUTORIALSPOINT: https://www.tutorialspoint.com/c_standard_library/c_function_strlen.htm
+
+CHATGPT MULTIPLE ARRAYS:
+
+If you can't use a struct to store the information for each unique word, you would need to rely on a 2D array or multiple parallel arrays to store the offset, length, and frequency of each word.
+Approach:
+
+    Offset: Store the position of each word's starting point in the buffer.
+    Length: Store the length of each word.
+    Count: Store the frequency of each word's occurrence.
+
+Since we can't use a struct, we will use three separate arrays:
+
+    offset[]: Stores the position of the first character of each word in the buffer.
+    length[]: Stores the length of each word.
+    count[]: Stores how many times each word appears.
+
+We will also store the words themselves in the original buffer[] and manage their positions and lengths based on the character offsets.
+Example Code:
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+#define BUFFER_SIZE 2048
+#define MAX_WORDS 1000
+
+// Function to check if a word exists in the arrays
+int word_exists(char *word, char buffer[], int offset[], int word_count, int *lengths) {
+    for (int i = 0; i < word_count; i++) {
+        // Compare the current word with the stored word in the buffer
+        if (strcmp(word, &buffer[offset[i]]) == 0) {
+            return i; // Word found, return its index
+        }
+    }
+    return -1; // Word not found
+}
+
+// Function to read input and extract words with their offset, length, and frequency
+void read_input_and_extract_words(char* buffer, int offset[], int lengths[], int counts[], int* word_count) {
+    int offset_index = 0;
+    char word[BUFFER_SIZE];
+    int word_len = 0;
+
+    for (int i = 0; i < BUFFER_SIZE && buffer[i] != '\0'; i++) {
+        // Skip non-alphabetical characters (they're considered delimiters)
+        if (isalpha(buffer[i])) {
+            word[word_len++] = buffer[i];
+        } else if (word_len > 0) {
+            word[word_len] = '\0';  // Null-terminate the word
+
+            // Check if the word already exists in the arrays
+            int index = word_exists(word, buffer, offset, *word_count, lengths);
+
+            if (index == -1) {
+                // Word doesn't exist, add a new entry
+                offset[*word_count] = offset_index;
+                lengths[*word_count] = word_len;
+                counts[*word_count] = 1;
+                (*word_count)++;
+            } else {
+                // Word exists, increment the count
+                counts[index]++;
+            }
+
+            // Reset word buffer and length for the next word
+            word_len = 0;
+        }
+        // Update offset (only for words, not for delimiters)
+        if (word_len > 0 || isalpha(buffer[i])) {
+            offset_index++;
+        }
+    }
+}
+
+int main() {
+    char buffer[BUFFER_SIZE];  // Declare buffer to hold input
+    int offset[MAX_WORDS];  // Array to store word offsets
+    int lengths[MAX_WORDS]; // Array to store word lengths
+    int counts[MAX_WORDS];  // Array to store word frequencies
+    int word_count = 0;
+
+    printf("Enter a string: ");
+    if (fgets(buffer, BUFFER_SIZE, stdin) == NULL) {
+        printf("Error reading input.\n");
+        return 1;
+    }
+
+    // Extract words from the buffer and store their details
+    read_input_and_extract_words(buffer, offset, lengths, counts, &word_count);
+
+    // Output the details of the words
+    printf("\nUnique words in the buffer:\n");
+    for (int i = 0; i < word_count; i++) {
+        printf("Word: \"%.*s\", Offset: %d, Length: %d, Count: %d\n",
+               lengths[i], &buffer[offset[i]], offset[i], lengths[i], counts[i]);
+    }
+
+    return 0;
+}
+
+Explanation of the Code:
+
+    Arrays:
+        offset[]: Stores the index where each word starts in the buffer.
+        lengths[]: Stores the length of each word.
+        counts[]: Stores the frequency (number of occurrences) of each word.
+
+    word_exists Function:
+        This function checks whether the word already exists in the array by comparing it with the words stored in the buffer[]. It returns the index of the word if it already exists, or -1 if it does not.
+
+    read_input_and_extract_words Function:
+        This function processes the input buffer to extract words and updates the offset[], lengths[], and counts[] arrays.
+        It checks if a word already exists in the arrays and either updates its count or adds a new entry.
+        It processes the buffer[] character by character and identifies words as sequences of alphabetic characters (isalpha()).
+        The offset[] stores the position of the word in the buffer, lengths[] stores the length of each word, and counts[] tracks the frequency.
+
+    main Function:
+        Reads the user input into buffer[] and passes the buffer and the three arrays to the function read_input_and_extract_words().
+        After processing the input, the details of each unique word (its text, offset, length, and frequency) are printed.
+
+Example Input:
+
+If you input the string:
+
+hello world hello universe world hello
+
+Example Output:
+
+Unique words in the buffer:
+Word: "hello", Offset: 0, Length: 5, Count: 3
+Word: "world", Offset: 6, Length: 5, Count: 2
+Word: "universe", Offset: 12, Length: 8, Count: 1
+
+Key Points:
+
+    This solution avoids using structures by using three parallel arrays: offset[], lengths[], and counts[].
+    Offset is used to determine where each word begins in the buffer.
+    Length tells us how long each word is.
+    Count tracks the number of times each word appears in the buffer.
+
+This method works well for storing and processing word-related information without the need for struct and ensures that you can keep track of the position, length, and frequency of each word in the buffer.
+
+# CHATGPT 2D ARRAY
+
+Yes, you can use a 2D array to store all the necessary information about each unique word, but it requires a little extra management of the data.
+
+In this case, we'll use a 2D array where each row holds the following information:
+
+    Column 1: The offset of the word in the buffer (starting position of the word in the buffer).
+    Column 2: The length of the word.
+    Column 3: The count of how many times the word appears.
+
+Since we can’t use a structure or parallel arrays, we'll store the offset, length, and count in consecutive columns of the same row for each word.
+Key Assumptions:
+
+    The first column (column 0) will store the offset.
+    The second column (column 1) will store the length.
+    The third column (column 2) will store the count (number of occurrences of the word).
+
+Approach:
+
+    You’ll read the words from the buffer and store each word’s offset, length, and frequency in the 2D array.
+    Each row in the 2D array will represent one unique word and will have three columns to store the offset, length, and frequency.
+    When encountering a new word, you check if it already exists in the 2D array, and if not, you add it; if it exists, you increment the count.
+
+Example Code:
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+#define BUFFER_SIZE 2048
+#define MAX_WORDS 1000
+
+// Function to check if a word exists in the 2D array
+int word_exists(char *word, char buffer[], int word_data[MAX_WORDS][3], int word_count) {
+    for (int i = 0; i < word_count; i++) {
+        if (strcmp(word, &buffer[word_data[i][0]]) == 0) {
+            return i;  // Word found, return its index
+        }
+    }
+    return -1;  // Word not found
+}
+
+// Function to read input and extract words with their offset, length, and frequency
+void read_input_and_extract_words(char* buffer, int word_data[MAX_WORDS][3], int* word_count) {
+    int offset_index = 0;
+    char word[BUFFER_SIZE];
+    int word_len = 0;
+
+    for (int i = 0; i < BUFFER_SIZE && buffer[i] != '\0'; i++) {
+        // Skip non-alphabetical characters (they're considered delimiters)
+        if (isalpha(buffer[i])) {
+            word[word_len++] = buffer[i];
+        } else if (word_len > 0) {
+            word[word_len] = '\0';  // Null-terminate the word
+
+            // Check if the word already exists in the 2D array
+            int index = word_exists(word, buffer, word_data, *word_count);
+
+            if (index == -1) {
+                // Word doesn't exist, add a new entry
+                word_data[*word_count][0] = offset_index;  // Store the offset
+                word_data[*word_count][1] = word_len;     // Store the length
+                word_data[*word_count][2] = 1;            // Set count to 1
+                (*word_count)++;
+            } else {
+                // Word exists, increment the count
+                word_data[index][2]++;
+            }
+
+            // Reset word buffer and length for the next word
+            word_len = 0;
+        }
+        // Update offset (only for words, not for delimiters)
+        if (word_len > 0 || isalpha(buffer[i])) {
+            offset_index++;
+        }
+    }
+}
+
+int main() {
+    char buffer[BUFFER_SIZE];  // Declare buffer to hold input
+    int word_data[MAX_WORDS][3];  // 2D array to store offset, length, and count
+    int word_count = 0;
+
+    printf("Enter a string: ");
+    if (fgets(buffer, BUFFER_SIZE, stdin) == NULL) {
+        printf("Error reading input.\n");
+        return 1;
+    }
+
+    // Extract words from the buffer and store their details
+    read_input_and_extract_words(buffer, word_data, &word_count);
+
+    // Output the details of the words
+    printf("\nUnique words in the buffer:\n");
+    for (int i = 0; i < word_count; i++) {
+        printf("Word: \"%.*s\", Offset: %d, Length: %d, Count: %d\n",
+               word_data[i][1], &buffer[word_data[i][0]], word_data[i][0], word_data[i][1], word_data[i][2]);
+    }
+
+    return 0;
+}
+
+Explanation of the Code:
+
+    2D Array word_data[MAX_WORDS][3]:
+        Column 0 (word_data[i][0]): Stores the offset (the starting position of the word in the buffer).
+        Column 1 (word_data[i][1]): Stores the length of the word.
+        Column 2 (word_data[i][2]): Stores the count of how many times the word appears in the buffer.
+
+    word_exists Function:
+        This function checks if the word exists in the 2D array. It compares the current word with the stored word in the buffer[] using strcmp.
+        It returns the index of the word if found, or -1 if the word does not exist in the array.
+
+    read_input_and_extract_words Function:
+        This function processes the input buffer and extracts words.
+        It uses isalpha() to determine if a character is part of a word and considers non-alphabetic characters as delimiters.
+        It keeps track of the word’s offset, length, and count in the word_data 2D array.
+
+    main Function:
+        Reads the input into the buffer[] and passes the buffer and the word_data array to the read_input_and_extract_words() function.
+        After processing the input, it prints out the details of each unique word (its text, offset, length, and frequency) stored in the word_data 2D array.
+
+Example Input:
+
+If you input the string:
+
+hello world hello universe world hello
+
+Example Output:
+
+Unique words in the buffer:
+Word: "hello", Offset: 0, Length: 5, Count: 3
+Word: "world", Offset: 6, Length: 5, Count: 2
+Word: "universe", Offset: 12, Length: 8, Count: 1
+
+Key Points:
+
+    2D Array Storage: We store the offset, length, and count for each word in a 2D array. The first column is the offset, the second is the length, and the third is the count.
+    Efficiency: This method uses only a 2D array for tracking the word data without requiring struct or parallel arrays.
+    Word Extraction: We extract words by iterating over the buffer and using isalpha() to identify word boundaries.
+
+This method is straightforward and keeps everything within a 2D array structure while storing all the required information (offset, length, count) for each unique word.

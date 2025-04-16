@@ -1,0 +1,13 @@
+Captain : placeholder
+			Skills           Abilities
+Ser#   Post Rank  | N  E  T  L  D  | C  I  S  P  A  | Race Name
+844779 Crew Ens   | 0  -1 2  0  2  | 15 3  11 12 10 | V    Crewmember1
+648218 Crew Ens   | 2  2  2  2  0  | 9  17 8  8  13 | M    Crewmember2
+585097 Crew Spcr  | -1 0  -1 0  -1 | 9  10 6  3  5  | T    Crewmember3
+179986 Crew Ens   | 2  2  0  2  0  | 7  13 10 11 9  | S    Crewmember4
+285737 Crew Spcr  | 0  0  2  0  2  | 12 4  13 13 11 | T    Crewmember5
+352237 Crew Spcr  | 2  0  0  2  2  | 13 11 13 11 5  | S    Crewmember6
+568722 Crew Spcr  | 2  2  2  2  2  | 12 10 8  14 15 | M    Crewmember7
+402695 Crew Ens   | 2  2  0  2  2  | 13 12 6  13 8  | S    Crewmember8
+427354 Crew Ens   | 2  2  2  2  0  | 10 14 10 9  10 | S    Crewmember9
+117862 Crew Ens   | 0  2  0  2  0  | 9  11 7  7  12 | M    Crewmember10

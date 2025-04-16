@@ -1,0 +1,33 @@
+{
+"expo_push_token": "ExponentPushToken[vC_hA0Cl0rEdkc0_hrOS_w]",
+"fcm_credentials": {
+"fcm": {
+"token": "fVSfS_pyI3o:APA91bGQRnfzwZSNp7ljCauZK6kZhB0qsEX-9HqUQ4Nay37FhxKFT2M-o6Ozm6nEW2DpkruqA81sNxnSo5O9rxxy_GGCTXP7XTUCYx3v74IBU47Iv1AEPlRxHN0iZ527gGAdDscKzzyM"
+},
+"gcm": {
+"androidId": "5480405385134571162",
+"securityToken": "6726881352153269172"
+}
+},
+"rustplus_auth_token": "eyJzdGVhbUlkIjoiNzY1NjExOTgxODI5MzE1NTMiLCJ2ZXJzaW9uIjowLCJpc3MiOjE3Mjg1MDA1MjcsImV4cCI6MTcyOTcxMDEyN30=.2BfQpSXpucE63yy+Rsg06v2lvIsxki8U2eenokspvldBM1rV2Bg9sR5BXpAbxjsyAWDCAFwAnUmUVIdVMlAOAQ=="
+}
+
+
+
+    "id": "70af8939-c084-4dc0-9fd4-c9af8349a391",
+    "name": "Rusty Rascals | Solo Duo | Monthly | No BP Wipe 10/3",
+    "desc": "Welcome to Rusty Rascals Duo Monthly!\\n\\n Last Wipe = 10/03/2024 2pm EST (NO BP WIPES)\\n Next Wipe = 11/07/2024 2pm EST (NO BP WIPES)\\n\\n Server Offerings:\\n-BPs Never Wipe\\n-Vanilla Only (NO P2W)\\n-Cheats/Scripts will result in a permanent ban.\\n-Teaming above the limit of 2 and Extreme Toxicity is not tolerated and will also result in a ban.\\n-Vac/Gamebans < 365 days are not welcome!\\n-VPNs must be whitelisted in order to play on the server\\n-Server restarts nightly at 6am EST to maintain server performan",
+    "img": "https://i.imgur.com/zgf9fyz.png",
+    "logo": "https://rustyrascals.org/img/rricon.png",
+    "url": "https://rustyrascals.org",
+    "ip": "45.88.228.99",
+    "port": "28082",
+    "playerId": "76561198182931553",
+    "playerToken": "81912858",
+    "entityId": "52394719",
+    "entityType": "2",
+    "entityName": "Smart Alarm",
+    "type": "entity"
+}
+
+

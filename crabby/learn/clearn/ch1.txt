@@ -1,0 +1,45 @@
+1.3
+    Choosing between while and for is arbitrary, based on what seems clearer.
+    The for is usually appropriate for loops in which the initialization and
+    increment are single statements and logically related, since it is more
+    compact than while and it keeps the loop control statements together in 1 place.
+
+1.4
+    It's bad practice to bury "magic numbers" like 300 and 20 (from temperature progs)
+    in a program because they convey little information to someone who might have to
+    read the program later, and they are hard to change in a systematic way. 
+    One way to deal with magic numbers is to give them meaningful names.
+    A #define line defines a symbolic name or symbolic constant to be a particular
+    string of characters     #define name replacement list
+
+1.5
+    Text input or output, regardless of where it originates or where it goes to, is
+    dealt with as streams of characters. 
+    A text stream is a sequence of characters divided into lines; each line consists
+    of zero or more characters followed by a newline character. It is the 
+    responsibility of the library to make each input or output stream confirm this
+    model; the C programmer using the library need not worry about how lines are
+    represented outside the program.
+    The standard library provides several functions for r/w one character at a time,
+    of which getchar() and putchar() are the simplest. Each time it is called, 
+    getchar() reads the NEXT INPUT CHARACTER from a text stream and returns that
+    as its value. That is, after 'c = getchar();'. The variable 'c' contains the 
+    next character of input. The characters normally come from the keyboard. 
+    The function putchar() prints a character each time it is called:
+        'putchar(c);'
+    prints the contents of the integer variable 'c' as a character, usually on
+    the screen. Calls to putchar and printf may be interleaved; the output will
+    appear in the order in which the calls are made.
+
+1.5.3
+    A character written between single quotes represents an integer value equal to
+    the numerical value of the character in the machine's character set. This is 
+    called a character constant, although it is just another way to write a small
+    integer. For example, 'A' is a character constant; in the ASCII character set
+    its value is 65, the internal representation of the character A. 'A' is to be
+    preferred over 65: its meaning is obvious, and it is independent of a particular
+    character set.
+
+
+
+

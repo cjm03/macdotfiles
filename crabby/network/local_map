@@ -1,0 +1,111 @@
+KNOWN LOCAL (TYPICAL):
+    shlop
+        IPv4 Address: 10.0.0.2
+        IPv6 Address: 2601:801:300:fe10:fc9d:cbff:7f88:74ed
+        Local Link IPv6 Address: fe80::4e31:2dff:fe1d:c33d
+        MAC Address: 4C:31:2D:1D:C3:3D
+
+    archtop
+        IPv4 Address: 10.0.0.221
+        IPv6 Address: 2601:801:300:fe10::c9cc
+        Local Link IPv6 Address: fe80::d65d:354f:9d79:5a00
+        MAC Address: C0:BF:BE:78:62:B8
+
+    archcrab
+        IPv4 Address: 10.0.0.15
+        IPv6 Address: 2601:801:300:fe10::5bec
+        Local Link IPv6 Address: fe80::e3ab:ead1:d5e:3af7
+        MAC Address: D8:BB:C1:42:5A:23
+        
+    mainframe
+        IPv4 Address: 10.0.0.36
+        IPv6 Address: 2601:801:300:fe10:6d46:bb6b:54c3:bb24
+        Local Link IPv6 Address: fe80::56bf:64ff:fe8f:edad
+        MAC Address: 54:BF:64:8F:ED:AD
+
+    MacBookAir (Josh's MBA)
+        IPv4 Address: 10.0.0.47
+        IPv6 Address: 2601:801:300:fe10::d8e0
+        Local Link IPv6 Address: fe80::812:a122:98fa:987f
+        MAC Address: B2:05:13:39:C2:3E
+
+    Zacks-MBP-3
+        IPv4 Address: 10.0.0.126
+        IPv6 Address: 2601:801:300:fe10::2270
+        Local Link IPv6 Address: fe80::1c9c:7cfb:45e:c66
+        MAC Address: A4:CF:99:6A:60:3C
+
+    58HisenseRokuTV
+        IPv4 Address: 10.0.0.236
+        IPv6 Address: 2601:801:300:fe10:3cf9:7318:10e:68b8
+        Local Link IPv6 Address: fe80::be5c:17ff:fe50:b758
+        MAC Address: BC:5C:17:50:B7:58
+
+    c2:fd:e3:18:4b:81 (Aidan's iPhone SE 2nd Gen)
+        IPv4 Address: 10.0.0.104
+        IPv6 Address: 2601:801:300:fe10::5e07
+        Local Link IPv6 Address: fe80::8d8:9b3:65d3:dc05
+        MAC Address: C2:FD:E3:18:4B:81
+        
+
+    4a:28:a5:13:6b:8d (Apple iPhone, likely Josh)
+        IPv4 Address: 10.0.0.244
+        IPv6 Address: 2601:801:300:fe10::d806
+        Local Link IPv6 Address: fe80::431:7dae:1627:32fc
+        MAC Address: 4A:28:A5:13:6B:8D
+
+    
+    f6:22:9d:a1:f9:c9 (Apple iPhone 13, possibly Marty)
+        IPv4 Address: 10.0.0.78
+        IPv6 Address: 2601:801:300:fe10::160d
+        Local Link IPv6 Address: fe80::1c5d:5680:ae8d:cd04
+        MAC Address: F6:22:9D:A1:F9:C9
+
+
+    22:85:8b:ea:73:4f (Zack's iPhone 13 Pro Max)
+        IPv4 Address: 10.0.0.128
+        IPv6 Address: 2601:801:300:fe10::e1b0
+        Local Link IPv6 Address: fe80::1036:78ac:aec2:c213
+        MAC Address: 22:85:8B:EA:73:4F
+
+    54:78:c9:74:1c:b8 (WiiM Mini)
+        IPv4 Address: 10.0.0.85
+        IPv6 Address: 2601:801:300:fe10::4d93
+        Local Link IPv6 Address: fe80::a8ec:bb2c:b228:4587
+        MAC Address: 54:78:C9:74:1C:B8
+
+    iPhone (CMIPHONE)
+        IPv4 Address: 10.0.0.185
+        IPv6 Address: 2601:801:300:fe10::41e6
+        Local Link IPv6 Address: fe80::140a:94ba:46b0:e7d
+        MAC Address: 42:0E:B3:9C:B7:D5
+
+    XBOXONE (Aidan's Room XBOX)
+        IPv4 Address: 10.0.0.27
+        IPv6 Address: 2601:801:300:fe10:1e39:d90f:3de6:2364
+        Local Link IPv6 Address: fe80::95fa:ac94:7dd8:f750
+        MAC Address: 58:82:A8:43:2A:42
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

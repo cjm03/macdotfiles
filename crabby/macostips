@@ -1,0 +1,15 @@
+#####################################################
+#                                                   #
+#    Tips and tricks to make proper use of macos    #
+#                                                   #
+#####################################################
+
+To increase keyboard repeat rate beyond default range, run the following in a terminal:
+    $ defaults write -g InitialKeyRepeat -int 10
+    $ defaults write -g KeyRepeat -int 1
+    Now, reboot and the rates should be increased
+
+To disable sleep (useful for playing music with lid closed):
+    $ sudo pmset disablesleep 1    // disables sleep
+    $ sudo pmset disablesleep 0    // reenables sleep
+

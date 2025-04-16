@@ -1,0 +1,4 @@
+GET foo.htm HTTP/1.1
+Host: www.indiana.edu
+Content-Length: 0
+Content-Type: application/text

@@ -1,0 +1,264 @@
+**C Study Guide**
+
+### **Control Syntax**
+
+#### **if/else Statements**
+
+- Syntax:
+  ```c
+  if (condition) {
+      // code block
+  } else if (condition) {
+      // another block
+  } else {
+      // default block
+  }
+  ```
+- Executes different blocks of code based on conditions.
+
+#### **Loops**
+
+##### **for Loop**
+
+- Syntax:
+  ```c
+  for (initialization; condition; increment) {
+      // code block
+  }
+  ```
+- Example:
+  ```c
+  for (int i = 0; i < 5; i++) {
+      printf("%d\n", i);
+  }
+  ```
+
+##### **while Loop**
+
+- Syntax:
+  ```c
+  while (condition) {
+      // code block
+  }
+  ```
+- Executes the block while the condition is true.
+
+##### **do/while Loop**
+
+- Syntax:
+  ```c
+  do {
+      // code block
+  } while (condition);
+  ```
+- Executes the block at least once before checking the condition.
+
+#### **switch/case Statement**
+
+- Syntax:
+  ```c
+  switch (expression) {
+      case value1:
+          // code
+          break;
+      case value2:
+          // code
+          break;
+      default:
+          // default code
+  }
+  ```
+- Uses `break` to prevent fall-through behavior.
+
+#### **Break and Continue**
+
+- `break`: Exits a loop or switch case immediately.
+- `continue`: Skips the rest of the loop iteration and jumps to the next iteration.
+
+---
+
+### **C Data Types and Memory Storage**
+
+| Type     | Size (Bytes) | Range (Signed)                  | Range (Unsigned)   |
+| -------- | ------------ | ------------------------------- | ------------------ |
+| `char`   | 1            | -128 to 127                     | 0 to 255           |
+| `short`  | 2            | -32,768 to 32,767               | 0 to 65,535        |
+| `int`    | 4            | -2,147,483,648 to 2,147,483,647 | 0 to 4,294,967,295 |
+| `long`   | 4 or 8       | System-dependent                | System-dependent   |
+| `float`  | 4            | \~3.4E-38 to \~3.4E+38          | N/A                |
+| `double` | 8            | \~1.7E-308 to \~1.7E+308        | N/A                |
+
+---
+
+### **Signed and Unsigned Representation**
+
+- **Signed integers** use **Two’s Complement** representation.
+- **Unsigned integers** represent only positive numbers.
+- **Two’s Complement** allows easy subtraction using bitwise operations.
+
+---
+
+### **Number System Conversions**
+
+#### **Hexadecimal, Octal, Binary, Decimal**
+
+| Base    | Example                     |
+| ------- | --------------------------- |
+| Decimal | `42`                        |
+| Binary  | `101010` (prefix `0b` in C) |
+| Octal   | `52` (prefix `0` in C)      |
+| Hex     | `0x2A` (prefix `0x` in C)   |
+
+- Conversion involves repeated division or bit manipulation.
+
+---
+
+### **Operators and Precedence**
+
+#### **Relational Operators**
+
+`==, !=, >, <, >=, <=`
+
+#### **Mathematical Operators**
+
+`+, -, *, /, %`
+
+#### **Logical Operators**
+
+`&&, ||, !`
+
+#### **Assignment Operators**
+
+`=, +=, -=, *=, /=, %=`
+
+#### **Order of Precedence**
+
+1. Parentheses `()`
+2. Unary `+,-,++,--,!`
+3. Multiplication, Division, Modulus `*, /, %`
+4. Addition, Subtraction `+, -`
+5. Relational `>, <, >=, <=`
+6. Equality `==, !=`
+7. Logical `&&, ||`
+8. Assignment `=, +=, -=, *=, /=, %=`
+
+---
+
+### **Functions in C**
+
+#### **Function Prototype Declaration**
+
+```c
+int add(int, int);
+```
+
+#### **Defining and Calling Functions**
+
+```c
+int add(int a, int b) {
+    return a + b;
+}
+int main() {
+    int result = add(5, 3);
+    printf("%d", result);
+    return 0;
+}
+```
+
+#### **Call by Reference vs Call by Value**
+
+- Scalars (int, char, etc.) use **Call by Value**.
+- Arrays use **Call by Reference** automatically.
+- Example:
+  ```c
+  void modifyArray(int arr[], int size) {
+      arr[0] = 100;  // Affects original array
+  }
+  ```
+
+#### **Passing Multi-Dimensional Arrays**
+
+```c
+void printMatrix(int arr[3][3]) {
+    // Function using 2D array
+}
+```
+
+---
+
+### **Arrays and Strings in C**
+
+#### **Definition and Initialization**
+
+```c
+int numbers[5] = {1, 2, 3, 4, 5};
+```
+
+#### **Multi-Dimensional Arrays**
+
+```c
+int matrix[2][3] = {{1, 2, 3}, {4, 5, 6}};
+```
+
+#### **C-Strings**
+
+```c
+char name[] = "Hello";
+char name2[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
+```
+
+- ``** (null terminator)** is required to end C-strings.
+
+---
+
+### **C Standard Library Functions**
+
+| Function    | Purpose                             |
+| ----------- | ----------------------------------- |
+| `printf()`  | Prints formatted output             |
+| `scanf()`   | Reads formatted input               |
+| `getchar()` | Reads a single character            |
+| `isspace()` | Checks if a character is whitespace |
+| `round()`   | Rounds a floating-point number      |
+
+Example:
+
+```c
+int num;
+printf("Enter a number: ");
+scanf("%d", &num);
+printf("You entered: %d", num);
+```
+
+---
+
+### **Preprocessor Directives**
+
+#### `` (Include Libraries)
+
+```c
+#include <stdio.h>
+```
+
+#### `` (Define Macros)
+
+```c
+#define PI 3.14159
+```
+
+---
+
+### **Summary**
+
+- **Understand control flow (**``**, loops, switch).**
+- **Know C data types, signed vs. unsigned storage.**
+- **Convert between number systems (binary, octal, decimal, hex).**
+- **Use operators with precedence in mind.**
+- **Declare, define, and call functions.**
+- **Handle arrays, including multi-dimensional and C-strings.**
+- **Use standard library functions like **``**, **``**, **``**.**
+- **Understand **``** and **``** macros.**
+
+
+
+    

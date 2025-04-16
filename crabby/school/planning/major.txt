@@ -1,0 +1,36 @@
+Summer 25:
+    CSCI-C 200 : Introduction to Computers and Programming
+    MATH-M 212 : Calculus II (at IvyTech)
+Fall 25:
+    CSCI-C 212 : Introduction to Software Systems (java)
+    CSCI-C 241 : Discrete Structures for Computer Science
+    PSY-P 155  : Introduction to Psychological and Brain Sciences
+    AST-A 100  : The Solar System
+Spring 26:
+    CSCI-C 335 : Computer Structures { desc: structure and internal operation of computers }
+    CSCI-C 343 : Data Structures { desc: study of data structs. encountered in computing problems, struct & use of storage media }
+    CSCI-Y 395 : Career Development for CSCI Majors
+    MATH-M 365 : Introduction to Probability and Statistics
+    GenEd ?pyhsics?
+Fall 26:
+    COGS-Q 370 : Experiments & Models in Cognition (INTENSIVE WRITING)
+    CSCI-B 430 : Security for Networked Systems { desc: extensive survey of network security }
+    CSCI-C 231 : Introduction to the Mathematics of Cybersecurity
+    CSCI-P 438 : Introduction to Computer Networks { desc: hardware tech such as ethernet, atm, wireless. protocols such as tcp/ip routing, error correcting. services such as DNS, webservers, vpn, openssl }
+Spring 27:
+    CSCI-B 433 : Systems & Protocol Security & Information Assurance
+    CSCI-P 436 : Introduction to Operating Systems
+    MATH-M 301 : Linear Algebra and Applications
+
+
+Needed:
+    CSCI-C 200 or 211
+    CSCI-C 212
+    CSCI-C 241
+    CSCI-C 343
+    Major Math - maybe MATH-M 212 (calc ii)?
+    CSCI-C 335
+    CSCI-B 403
+    2 x CSCI-B 443 or CSCI-P 434/436/438
+    Major Math - maybe MATH-M 311 (calc iii) or MATH-M 303 (linear alg.)?
+

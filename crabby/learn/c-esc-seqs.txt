@@ -1,0 +1,14 @@
+Chapter 2 Experimenting with statements and blocks (p 37)
+Escape sequences reference
+Symbol  Meaning
+\a      Alert
+\b      Backspace
+\f      Form feed (or page advance)
+\n      New line
+\r      Carriage return
+\t      Horizontal tab
+\v      Vertical tab
+\'      Single quote
+\"      Double quote
+\?      Question mark
+\\      Backslash itself
