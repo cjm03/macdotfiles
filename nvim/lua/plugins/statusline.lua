@@ -5,9 +5,9 @@ return {
         require("lualine").setup({
             options = {
                 --theme = "moonfly",
-                --theme = "auto",
-                theme = "palenight",
-                --global_status = true,
+                -- theme = "auto",
+                theme = "onedark",
+                global_status = false,
                 section_separators = '',
                 component_separators = '',
             },

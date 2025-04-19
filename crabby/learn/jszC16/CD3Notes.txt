@@ -1,0 +1,64 @@
+Includes:
+    stdio.h
+    stdbool.h
+    string.h
+    stdlib.h
+    time.h
+
+Enumerations:
+    Suit; contains club, diamond, heart, and spade as representations of a single card's suit
+    Face; contains 13 components representing values 1-13 as per those in a deck of cards
+    3rd enum (ANONYMOUS); contains components that hold values that do not change over the course of the program
+                          used as a work around for `const int` to avoid using magic numbers
+                         { kCardsInDeck = 52, kCardsInSuit = 13, kCardsInHand = 5, kNumHands = 4 }
+
+Structures:
+    Card; holds two variables for the two named (synonymized) enums Suit and Face, respectively `suit` and `face`. holds an integer
+          type variable `suitValue` representing the integer value of the suit (must be cast). `faceValue` is the same way, but
+          represents the numerical value of the card. `isWild` holds a boolean but doesn't get used much in this program.
+    Hand; Represents components utilized to simulate and manipulate a hand of 5 cards. holds an array of pointers of type Card and 
+          of size kCardsInHand (5). holds an integer value to keep track of how many cards have been dealt.
+    Deck; Represents components necessary to form a deck of 52 cards. holds an array `ordered` of type Card and of size 
+          kCardsInDeck (52), which is used as 52 separate Card structures, as evident. holds an array of pointers of type Card
+          and of size kCardsInDeck (52), also representing 52 separate Card structures, but represents the cards in a shuffled state.
+          holds an integer variable for keeping track of the amount of cards that have been dealt to hands, and for keeping track
+          of the amount of cards remaining in the deck. also contains a boolean `bIsShuffled`, representing whether shuffled or not.
+
+Program Flow Analysis:
+    The first two statements in main() :
+        Deck deck;
+        Deck* pDeck = &deck;
+    `Deck deck` initializes a variable deck of struct type Deck, and `Deck* pDeck = &deck` assigns a pointer pDeck to a Deck, and assigns its value
+    to the address of the previously initialized `deck` structure.
+    
+    Next, function InitializeDeck() is called with `pDeck` as the parameter and a Card pointer is declared:
+        InitializeDeck(pDeck);
+
+        InitializeDeck() begins by declaring an array f of type Face and of unknown size with integer strings 'two' .. 'ten', 'jack', 'queen', 'king',
+        and 'ace' as the elements, functioning as a lookup table. The next statement declares the pointer pC to a Card. Next, is a for loop.
+            for (int i = 0; i < kCardsInSuit; i++) {
+                pC = &(pDeck->ordered[i + (0 * kCardsInSuit)]);
+                InitializeCard(pC, spade, f[i], kNotWildCard);
+        There are 8 total statements in the for loop. The loop iterates from 0 .. 12. The first statement inside the loop body can be read as:
+            "pC = the address of (pDeck pointing to its component `ordered`, which is an array, 's element at the index resulting from i + (0 * 13)"
+            This evaluates to, in the first iteration:
+                pC = &(pDeck->ordered[0]);
+            "pC is assigned to the address of the pointer pDeck pointing to the 0th element of pDeck's component `ordered`"
+            InitializeCard() is called with pC, <a suit>, f[i], and kNotWildCard as parameters. In the four distinct blocks in the loop, the suit
+            is what is different.
+        The other 6 statements do the exact same thing, but the indexes increment by 13.
+
+        Next is another for loop that iterates from 0 .. 51. There is one statement in the loop:
+            pDeck->shuffled[i] = &(pDeck->ordered[i]);
+        This statement sets the value of `shuffled` at index `i` to the value at the address of pDeck pointing to `ordered` at index `i` via `pDeck`
+        Finally, pointer pDeck to bIsShuffled is set to false and pointer pDeck to numDealt is set to 0.
+
+    The next statement in main is a function call to PrintDeck with pDeck as the parameter:
+        PrintDeck(pDeck);
+
+
+
+
+
+
+

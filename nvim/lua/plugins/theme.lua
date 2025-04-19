@@ -1,6 +1,5 @@
 --+ Vesper Theme +--
-
---return {
+-- return {
 --    "datsfilipe/vesper.nvim",
 --    lazy = false,
 --    priority = 1000,
@@ -16,10 +15,9 @@
 --        })
 --        vim.cmd("colorscheme vesper")
 --    end
---}
+-- }
 
 --+ Nordic Theme +--
-
 --return {
 --    "AlexvZyl/nordic.nvim",
 --    lazy = false,
@@ -31,7 +29,6 @@
 --}
 
 --+ Midnight Theme +---
-
 return {
     "dasupradyumna/midnight.nvim",
     lazy = false,
@@ -44,19 +41,14 @@ return {
     end
 }
 
---+ Github Theme +--
-
---return {
---    "projekt0n/github-nvim-theme",
---    name = 'github-theme',
---    lazy = false,
---    priority = 1000,
---    config = function()
---        require("github-theme").setup({
---            -- ...
---        })
---        vim.cmd("colorscheme github_dark_high_contrast")
---    end
---}
-
+--+ E-Ink Theme +--
+-- return {
+--     "alexxGmZ/e-ink.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     config = function()
+--         require("e-ink").setup()
+--         vim.cmd("colorscheme e-ink")
+--     end
+-- }
 

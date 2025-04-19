@@ -10,12 +10,12 @@ vim.opt.number = true
 vim.opt.wrap = false
 vim.opt.cursorline = false
 vim.opt.scrolloff = 50
---vim.opt.sidescrolloff = 5
---vim.opt.ignorecase = true
---vim.opt.smartcase = true
+-- vim.opt.sidescrolloff = 5
+-- vim.opt.ignorecase = true
+-- vim.opt.smartcase = true
 vim.opt.showmode = false
 vim.opt.cmdheight = 0
-vim.opt.background = "dark"
+vim.opt.background = "light"
 vim.opt.termguicolors = true
 vim.opt.fillchars:append { vert = " " }
 vim.opt.fillchars:append { eob = " " }
@@ -27,9 +27,9 @@ function _G.StatusColumn()
     local linenum = vim.v.lnum
     if relnum == 0 then
         --return string.format(" %d", linenum) --left-align absolute num
-        return "%#LineNrAbsolute#"..string.format(" %d", linenum) --left-align absolute num
+        return "%#LineNrAbsolute#"..string.format(" %d ", linenum) --left-align absolute num
     else
-        return "%#LineNrRelative#"..string.format("  %d", relnum)   --right-align relative num
+        return "%#LineNrRelative#"..string.format("  %d ", relnum)   --right-align relative num
         --return "%#LineNrRelative#"..string.format(" %-3d", relnum)   --right-align relative num
     end
 end

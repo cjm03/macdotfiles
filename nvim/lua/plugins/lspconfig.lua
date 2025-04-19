@@ -15,7 +15,18 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         lazy = false,
-        opts = { auto_install = true, },
+        --opts = { auto_install = true, },
+        config = function()
+            require("mason-lspconfig").setup({
+                ensure_installed = { "pylsp", 
+                    "clangd",
+                    "lua_ls",
+                    "intelephense",
+                    "bashls",
+                    "html"
+                },
+            })
+        end,
     },
     
 ---------------nvim-lspconfig----------------------------------------------------
@@ -34,7 +45,28 @@ return {
 
             local lspconfig = require("lspconfig")
 
-            lspconfig.clangd.setup({
+            lspconfig.pylsp.setup({
+                capabilities = capabilities,
+            })
+
+            lspconfig.lua_ls.setup({
+                capabilities = capabilities,
+            })
+
+            lspconfig.html.setup({
+                capabilities = capabilities,
+                filetypes = { "html", "php", "css", "javascript", "typescript", "jsx", "tsx", },
+            })
+
+            lspconfig.bashls.setup({
+                capabilities = capabilities,
+            })
+            
+            lspconfig.intelephense.setup({
+                capabilities = capabilities,
+            })
+
+            require("lspconfig").clangd.setup({
                 cmd = {
                     "clangd",
                     "--compile-commands-dir=build",
@@ -55,19 +87,12 @@ return {
                 capabilities = capabilities,
             })
 
-            lspconfig.pylsp.setup({
-                capabilities = capabilities,
-            })
-
-            lspconfig.lua_ls.setup({
-                capabilities = capabilities,
-            })
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-            vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-            vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
-            vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-            vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
-            vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, {})
+            vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "definition" })
+            vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "references" })
+            vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "codeaction" })
+            vim.keymap.set("n", "<leader>go", vim.diagnostic.open_float, { desc = "open diagnostic float" })
+            --vim.keymap.set("n", "<leader>g", vim.lsp.buf.rename, {})
         end,
     },
 }
