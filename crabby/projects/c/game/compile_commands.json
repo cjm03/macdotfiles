@@ -1,0 +1,7 @@
+[
+    {
+        "directory": "/Users/crab/crabby/projects/c/game",
+        "command": "gcc -I/opt/homebrew/include/SDL2 -L/opt/homebrew/lib -lSDL2",
+        "file": "main.c"
+    }
+]

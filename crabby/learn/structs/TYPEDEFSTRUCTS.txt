@@ -1,0 +1,82 @@
+1. Basic Structures
+
+    A. Separate
+        
+        Define a structured type:
+            
+            struct Card {
+                Face face;
+                Suit suit;
+            };
+        
+        Then declare variables of that type:
+        
+            struct Card c1, c2, c3, c4, c5;
+
+        Now, c1, c2, c3, c4, c5 are all variables of type 'struct Card'
+
+    B. All-In-One
+
+        Define a structure and declare variables of that type at the same time:
+
+            struct Card {
+                Face face;
+                Suit suit;
+            } c1, c2, c3, c4, c5;
+
+        struct Card is now defined and has been assigned as the type of c1, c2, c3, c4, c5
+
+2. Typedef Structures
+
+    A. Two-Part
+
+        Define structured type:
+
+            struct Card {
+                Face face; 
+                Suit suit;
+            };
+
+        Use typedef to create a synonym:
+
+            typedef struct Card Card;
+
+        Now, the type 'struct Card' may also be used as simply 'Card':
+
+            struct Card c1, c2, c3, c4, c5;
+
+                *is the same as*
+
+            Card c1, c2, c3, c4, c5;
+
+    B. One Liner
+
+        Define a structure type and its synonym(s):
+
+            typedef struct Card {
+                Face face;
+                Suit suit;
+            } Card;
+
+        struct Card is now defined and can be referenced by its synonym 'Card'
+
+
+    C. Anonymous Structures
+
+        A structure does not HAVE to have a name and may be referenced simply by its synonym:
+
+            typedef struct {
+                Face face;
+                Suit suit;
+            } Card;
+
+        Now, the only way to assign variables of this type:
+
+            Card c1, c2, c3, c4, c5;
+
+
+
+
+
+
+

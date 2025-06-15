@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS articlesdb;
+USE articlesdb;
+
+CREATE TABLE IF NOT EXISTS articles (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(200) NOT NULL,
+    image VARCHAR(255),
+    content TEXT NOT NULL,
+    font_size VARCHAR(10) DEFAULT '14px',
+    font_color VARCHAR(7) DEFAULT '#000000',
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);

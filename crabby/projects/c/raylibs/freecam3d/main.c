@@ -34,9 +34,10 @@ int main(void)
 
         DrawCube(cubePosition, 2.0, 2.0, 2.0, RED);
         DrawCube(cubePosition, 8.0, 8.0, 8.0, SKYBLUE);
+        DrawCube(cubePosition, 16.0, 16.0, 16.0, GREEN);
         DrawCubeWires(cubePosition, 2.0, 2.0, 2.0, MAROON);
 
-        DrawGrid(10, 1.0);
+        DrawGrid(32, 1.0);
 
         EndMode3D();
 

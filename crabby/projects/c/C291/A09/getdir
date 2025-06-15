@@ -1,0 +1,3 @@
+GET testdir HTTP/1.1
+Host: developer.mozilla.org
+Request-Agent: The Programmer

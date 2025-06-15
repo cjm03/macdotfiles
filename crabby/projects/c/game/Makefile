@@ -1,0 +1,2 @@
+default:
+	gcc main.c -o game -I/opt/homebrew/include/SDL2 -L/opt/homebrew/lib -lSDL2
